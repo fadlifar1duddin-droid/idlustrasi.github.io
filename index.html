@@ -3,122 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium digital design assets: High-resolution 3D icons and minimalist PSD smart object mockups by idlustrasi.">
-    <title>idlustrasi | Premium Digital Assets</title>
+    <title>idlustrasi | Premium Design Assets & Portfolio</title>
     <style>
-        :root {
-            --bg-color: #f4f4f0;
-            --text-color: #111;
-            --accent-color: #ff5e5b; /* Warna tombol, bisa diubah */
-            --border-color: #111;
-        }
+        /* Gaya Soft Minimalist ala Creasheeps */
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Inter', 'Helvetica Neue', sans-serif;
+            background-color: #f8f9fb; /* Latar belakang abu-abu sangat muda */
+            color: #222;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
         header {
-            padding: 1.5rem 5%;
-            border-bottom: 3px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
+            text-align: center;
+            padding: 5rem 2rem 2rem 2rem;
         }
         header h1 {
-            margin: 0;
-            font-size: 2rem;
-            font-weight: 900;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
             letter-spacing: -1px;
         }
-        .hero {
-            padding: 6rem 5%;
-            text-align: center;
-            background-color: #fff;
-            border-bottom: 3px solid var(--border-color);
-        }
-        .hero h2 {
-            font-size: 3.5rem;
-            margin: 0 0 1rem 0;
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -2px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
+        header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 500px;
             margin: 0 auto 2rem auto;
-            color: #555;
         }
+
+        /* Sistem Filter Kategori */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: #fff;
+            border: 1px solid #eaeaea;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px; /* Tombol membulat */
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #111;
+            color: #fff;
+            border-color: #111;
+        }
+
+        /* Bento Grid System */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            padding: 4rem 5%;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 0 5% 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .card {
             background: #fff;
-            border: 3px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 8px 8px 0px var(--border-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 24px; /* Sudut membulat halus */
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Bayangan super lembut */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
         }
         .card:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 11px 11px 0px var(--border-color);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
         }
         .card img {
             width: 100%;
-            height: 250px;
+            height: 240px;
             object-fit: cover;
-            border-bottom: 3px solid var(--border-color);
-            background-color: #eee;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            background-color: #f0f0f0;
         }
-        .card-content {
-            padding: 1.5rem;
-        }
-        .card-content h3 {
+        .card h3 {
             margin: 0 0 0.5rem 0;
-            font-size: 1.3rem;
-            font-weight: 800;
+            font-size: 1.2rem;
         }
-        .card-content p {
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
             margin: 0 0 1.5rem 0;
-            font-size: 0.95rem;
-            color: #555;
         }
-        .btn {
-            display: block;
-            text-align: center;
-            background-color: var(--accent-color);
-            color: #fff;
-            text-decoration: none;
-            padding: 0.8rem 1rem;
-            font-weight: 800;
-            border: 3px solid var(--border-color);
-            border-radius: 4px;
-            box-shadow: 4px 4px 0px var(--border-color);
-            transition: all 0.2s;
-        }
-        .btn:hover {
-            background-color: #fff;
-            color: var(--text-color);
-        }
-        .btn-hero {
+        .card .btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-        }
-        footer {
-            text-align: center;
-            padding: 3rem 5%;
-            border-top: 3px solid var(--border-color);
-            background-color: #fff;
+            background-color: #f1f3f5;
+            color: #111;
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .card .btn:hover {
+            background-color: #e2e5e9;
+        }
+        .hide {
+            display: none;
         }
     </style>
 </head>
@@ -126,55 +115,74 @@
 
 <header>
     <h1>idlustrasi.</h1>
-    <a href="#products" style="text-decoration: none; color: inherit; font-weight: bold;">View Catalog</a>
+    <p>Premium 3D generated icons, smart object mockups, and visual identities crafted for global projects.</p>
+    
+    <!-- Tombol Filter -->
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterSelection('all')">Show All</button>
+        <button class="filter-btn" onclick="filterSelection('3d')">3D Icons</button>
+        <button class="filter-btn" onclick="filterSelection('mockup')">PSD Mockups</button>
+        <button class="filter-btn" onclick="filterSelection('branding')">Logo & Branding</button>
+        <button class="filter-btn" onclick="filterSelection('feed')">Social Feed</button>
+    </div>
 </header>
 
-<section class="hero">
-    <h2>Premium Design Assets</h2>
-    <p>High-resolution 3D icons and minimalist PSD smart object mockups to elevate your next big project.</p>
-    <a href="#products" class="btn btn-hero">Explore Products</a>
-</section>
-
-<section id="products" class="grid-container">
+<section class="grid-container">
     
-    <!-- Produk 1 -->
-    <div class="card">
-        <!-- Ganti tautan src di bawah dengan link gambar aslimu nanti -->
-        <img src="https://via.placeholder.com/600x400/eeeeee/111111?text=Earth+Tone+Skincare+Mockup" alt="Earth Tone Skincare Mockup Bundle">
-        <div class="card-content">
-            <h3>Earth Tone Skincare Mockup</h3>
-            <p>Editable PSD smart objects with highly realistic lighting and premium aesthetic.</p>
-            <a href="https://fadlifariduddin.gumroad.com/l/vgpug" target="_blank" class="btn">View on Gumroad</a>
-        </div>
+    <!-- Item 3D Icon (Link Gumroad) -->
+    <div class="card item 3d">
+        <img src="gambar-3d-kamu.jpg" alt="Web Development 3D Icons">
+        <h3>Web Dev 3D Icons</h3>
+        <p>2000x2000px transparent PNGs.</p>
+        <a href="https://fadlifariduddin.gumroad.com/l/webdevelopment3diconpack" class="btn">Get on Gumroad</a>
     </div>
 
-    <!-- Produk 2 -->
-    <div class="card">
-        <!-- Ganti tautan src di bawah dengan link gambar aslimu nanti -->
-        <img src="https://via.placeholder.com/600x400/eeeeee/111111?text=Web+Development+3D+Icons" alt="Web Development 3D Icon Pack">
-        <div class="card-content">
-            <h3>Web Development 3D Icons</h3>
-            <p>High-resolution 2000x2000px transparent PNGs ready to drop into your designs.</p>
-            <a href="https://fadlifariduddin.gumroad.com/l/webdevelopment3diconpack" target="_blank" class="btn">View on Gumroad</a>
-        </div>
+    <!-- Item Mockup (Link Gumroad) -->
+    <div class="card item mockup">
+        <img src="gambar-mockup-kamu.jpg" alt="Earth Tone Skincare Mockup">
+        <h3>Skincare Mockup</h3>
+        <p>Editable PSD with realistic lighting.</p>
+        <a href="https://fadlifariduddin.gumroad.com/l/vgpug" class="btn">Get on Gumroad</a>
     </div>
 
-    <!-- Produk 3 -->
-    <div class="card">
-        <!-- Ganti tautan src di bawah dengan link gambar aslimu nanti -->
-        <img src="https://via.placeholder.com/600x400/eeeeee/111111?text=Game+3D+Icon+Pack" alt="Game 3D Icon Pack">
-        <div class="card-content">
-            <h3>Game 3D Icon Pack</h3>
-            <p>Level up your UI design with these detailed, ready-to-use gaming assets.</p>
-            <a href="https://fadlifariduddin.gumroad.com/l/game3diconpack" target="_blank" class="btn">View on Gumroad</a>
-        </div>
+    <!-- Item Portofolio Logo (Link Behance) -->
+    <div class="card item branding">
+        <img src="gambar-logo-kamu.jpg" alt="Minimalist Brand Identity">
+        <h3>Luxury Brand Identity</h3>
+        <p>Complete logo and visual hierarchy.</p>
+        <a href="https://www.behance.net/fadlyfariduddin" class="btn">View Case Study</a>
+    </div>
+
+    <!-- Item Portofolio Feed (Link Behance) -->
+    <div class="card item feed">
+        <img src="gambar-feed-kamu.jpg" alt="Social Media Campaign Design">
+        <h3>Campaign Feed Design</h3>
+        <p>Premium grid layouts for social media.</p>
+        <a href="https://www.behance.net/fadlyfariduddin" class="btn">View Case Study</a>
     </div>
 
 </section>
 
-<footer>
-    <p>&copy; 2026 idlustrasi. All rights reserved.</p>
-</footer>
+<!-- Script Sederhana untuk Fungsi Filter -->
+<script>
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("item");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    x[i].classList.add("hide");
+    if (x[i].className.indexOf(c) > -1) x[i].classList.remove("hide");
+  }
+  // Mengubah warna tombol yang sedang aktif
+  var btns = document.getElementsByClassName("filter-btn");
+  for (i = 0; i < btns.length; i++) {
+    btns[i].classList.remove("active");
+  }
+  event.currentTarget.classList.add("active");
+}
+// Tampilkan semua saat pertama kali dimuat
+filterSelection('all');
+</script>
 
 </body>
 </html>
